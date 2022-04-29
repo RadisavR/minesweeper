@@ -1,11 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../../app/store';
 
-export interface MineFieldsState {
+export interface GameLevelState {
   level: number;
 }
 
-const initialState: MineFieldsState = {
+const initialState: GameLevelState = {
   level: 1,
 };
 

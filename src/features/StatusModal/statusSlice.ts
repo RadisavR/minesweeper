@@ -1,9 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../../app/store';
 
-type MineFieldsStatus = 'In progress' | 'You won' | 'Game Over!';
+type GameStatus = 'In progress' | 'You won' | 'Game Over!';
 export interface Status {
-  status: MineFieldsStatus;
+  status: GameStatus;
 }
 
 const initialState: Status = {
@@ -14,7 +14,7 @@ export const statusSlice = createSlice({
   name: 'status',
   initialState,
   reducers: {
-    setGameStatus: (state, action: PayloadAction<MineFieldsStatus>) => {
+    setGameStatus: (state, action: PayloadAction<GameStatus>) => {
       state.status = action.payload;
     },
   },
