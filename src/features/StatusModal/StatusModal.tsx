@@ -1,9 +1,10 @@
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity, Text, Modal } from 'react-native';
+import { View, TouchableOpacity, Text, Modal } from 'react-native';
 
-import { getGameLevel } from '../Board/boardSlice';
+import { getGameLevel } from '../Menu/gameLevelSlice';
 import { useAppSelector } from '../../app/hooks/index';
 import { ws } from '../../app/socket';
+import { styles } from './statusModalStyles';
 
 export const StatusModal = (props: any) => {
   const gameLevel = useAppSelector(getGameLevel);
@@ -30,19 +31,3 @@ export const StatusModal = (props: any) => {
     </Modal>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    height: '100%',
-    alignItems: 'center',
-    justifyContent: 'space-around',
-  },
-  text: {
-    textAlign: 'center',
-    fontSize: 26,
-    fontWeight: '500',
-  },
-  newGameTextColor: {
-    color: '#eb5e34',
-  },
-});

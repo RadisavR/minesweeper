@@ -1,14 +1,18 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
 
-import mineFieldsReducer from '../components/Board/boardSlice';
+import statusReducer from '../features/StatusModal/statusSlice';
+import levelReducer from '../features/Menu/gameLevelSlice';
+import fieldValuesReducer from '../features/Board/fieldValuesSlice';
 import { rootSaga } from '../app/sagas/sagas';
 
 const sagaMiddleware = createSagaMiddleware();
 
 export const store = configureStore({
   reducer: {
-    mineFields: mineFieldsReducer,
+    status: statusReducer,
+    level: levelReducer,
+    fieldValues: fieldValuesReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().prepend(sagaMiddleware),

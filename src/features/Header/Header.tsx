@@ -10,27 +10,13 @@
 'use strict';
 
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { View, Text } from 'react-native';
+import { styles } from './headerStyles';
 
-const Header = () => {
+export const Header = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.headerText}>Minesweeper</Text>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    paddingVertical: '5%',
-    backgroundColor: '#198a79',
-  },
-  headerText: {
-    fontSize: 30,
-    fontWeight: 'bold',
-    color: 'white',
-  },
-});
-export default Header;
